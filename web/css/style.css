@@ -1,0 +1,117 @@
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+    margin: auto;
+}
+.table {
+    margin: auto;
+    text-align: center;
+}
+th {
+    background: #BCEBDD;
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+    background: #F8E391;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
+.create_button {
+    background: #BCEBDD;
+    border-radius: 10px 10px 10px 10px;
+    width: 100px;
+    padding: 5px;
+    text-decoration: none;
+}
+.create_button:hover {
+    background: #a9d3c6;
+    color: #ffe;
+}
+.form {
+    margin: auto;
+    width: 50%;
+    border: 1px solid #dadada;
+    padding: 10px;
+
+}
+.form_label {
+    margin: 0;
+}
+.form_field input, textarea {
+    width: 100%;
+    border: 1px solid #dadada;
+    border-radius: 3px;
+}
+.submit_button {
+    text-align: right;
+}
+.flash-message {
+    color: white;
+    margin: 10px 0 10px 0;
+    text-shadow: 1px 1px 2px black, 0 0 1em black;
+    text-align: center;
+    padding: 10px;
+}
+.flash-message.success {
+    background: #D9F3D9;
+}
+.flash-message.error {
+    background: #FA8072;
+}
+
+form .row {
+    display: block;
+    padding: 7px 8px;
+    margin-bottom: 7px;
+}
+.form_field input:hover, textarea:hover {
+    background: #f1f7fa;
+}
+.form_field input:focus, textarea:focus {
+    outline: none;
+    border-color: #deecf3;
+    box-shadow: 0 0 10px #deecf3;
+}
+form label {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 120px;
+    padding: 6px 0;
+    color: #464646;
+    vertical-align: top;
+}
+.close {
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

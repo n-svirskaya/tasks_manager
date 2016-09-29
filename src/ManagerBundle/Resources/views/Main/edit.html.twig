@@ -1,0 +1,35 @@
+{% extends 'ManagerBundle:Main:layout.html.twig' %}
+{% block title %}
+   {% if app.request.get('id')  %}
+      Редактировать задачу
+   {% else %}
+      Создать задачу
+   {% endif %}
+
+{% endblock %}
+{% block content %}
+<div class="form" id="w">
+   <form action="" method="POST">
+       {% if app.request.get('id')  %}
+           <div class="form_label">Внесите изменения в задачу:</div>
+       {% else %}
+           <div class="form_label">Заполните поля для добавления новой задачи:</div>
+       {% endif %}
+      {{ form_errors(form) }}
+      {{ form_widget(form._token) }}
+      <div class="row">
+         {{ form_errors(form.name) }}
+         <div class="form_label">Название:</div>
+      <div class="form_field">{{ form_widget(form.name) }}</div>
+      </div>
+      <div class="row">
+         {{ form_errors(form.description) }}
+         <div class="form_label">Описание:</div>
+         <div class="form_field">{{ form_widget(form.description) }}</div>
+      </div>
+      <div class="submit_button">
+         <input type="submit" value="Сохранить" />
+      </div>
+   </form>
+</div>
+{% endblock %}

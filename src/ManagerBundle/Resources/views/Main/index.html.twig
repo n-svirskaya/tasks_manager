@@ -1,0 +1,40 @@
+{% extends 'ManagerBundle:Main:layout.html.twig' %}
+{% block title %}Список задач{% endblock %}
+{% block content %}
+    <div class="table">
+        <div><a class="create_button" href="{{ path('create') }}">Создать задачу</a></div>
+        <h3>Таблица задач</h3>
+        {% if tasks|length %}
+            <table>
+                <tr>
+                    <th>п/п</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Дата создания</th>
+                    <th>Дата редактирования</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% set i = 1 %}
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ i }}</td>
+                        <td>{{ task.name }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.createdAt|date("d/m/Y H:i:s") }}</td>
+                        <td>{{ task.updatedAt|date("d/m/Y H:i:s") }}</td>
+                        <td><a class="create_button" href="{{ path('create', {'id': task.id}) }}"><i
+                                        class="fa fa-pencil-square-o fa-lg"></i></a></td>
+                        <td><a onclick="return confirm('Вы уверены, что хотите удалить задачу?')" class="create_button"
+                               href="{{ path('delete', {'id': task.id}) }}"><i class="fa fa-times fa-lg"></i></a></td>
+                    </tr>
+                    {% set i = i + 1 %}
+                {% endfor %}
+            </table>
+        {% else %}
+            <div>Список задач пуст</div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+
